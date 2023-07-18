@@ -24,7 +24,7 @@
 	<div class="row mb-3">
 		<div class="col-12">
 			<p>신규 회원정보를 입력하고 회원가입하세요.</p>
-			<form class="border bg-light p-3" method="post" action="register" >
+			<form class="border bg-light p-3" method="post" action="join" >
 				<div class="form-group mb-3">
 					<label class="form-label">이메일</label>
 					<input type="text" class="form-control" name="email" id="user-email"/>

@@ -16,14 +16,14 @@ public class UserController {
 	private final UserService userService;
 
 	// 사용자 등록화면 요청과 매핑되는 요청핸들러 메소드
-	@GetMapping("/register")
+	@GetMapping("/join")
 	public String form() {
 
-		return "/user/registerform";
+		return "/user/join";
 	}
 
 	// 사용자 등록 요청과 매핑되는 요청핸들러 메소드
-	@PostMapping("/register")
+	@PostMapping("/join")
 	public String register(String email, String password) {
 		userService.createUser(email, password);
 
@@ -31,6 +31,11 @@ public class UserController {
 	}
 
 	// 로그인 화면 요청과 매핑되는  요청핸들러 메소드
+	@GetMapping("/login")
+	public String loginform() {
+
+		return "/user/login";
+	}
 
 	// 내정보보기 화면 요청과 매핑되는 요청핸들러 메소드
 

@@ -9,5 +9,12 @@
             (#{user.no}, #{roleName})
     </insert>
 
+    <select id="getUserRolesByUserNo" parameterType="int" resultType="kr.co.jhta.vo.UserRole">
+        select
+            user_no     as "user.no",
+            role_name   as roleName
+        from spring_boot_user_roles
+        where user_no = #{value}
+    </select>
 
 </mapper>

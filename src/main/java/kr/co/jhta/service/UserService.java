@@ -62,9 +62,9 @@ public class UserService implements UserDetailsService {
 	}
 	
 	// 사용자 인증하기
-	public User login(String email, String password) {
-		
-		return null;
+	public User login(String email) {
+
+		return userDao.getUserByEmail(email);
 	}
 	
 	// 사용자 상세정보 제공하기(보유권한 정보도 같이 조회함)
