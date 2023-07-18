@@ -34,7 +34,7 @@
 			</sec:authorize>
 			<sec:authorize access="isAuthenticated()">
 				<li class="nav-item">
-					<a class="nav-link" href="/user/info">내 정보</a>
+					<a class="nav-link" href="#">내 정보</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="/user/logout">로그아웃</a>
