@@ -9,4 +9,31 @@
             (boot_boards_seq.nextval, #{title}, #{content}, #{user.no})
     </insert>
 
+    <select id="getBoards" parameterType="map" resultType="kr.co.jhta.vo.Board">
+        select
+            no, title, readCount, reviewCount, createDate, email
+        from (
+            select
+            row_number() over (order by board_no desc) row_number,
+            A.board_no			    as no,
+            A.board_title			as title,
+            A.board_read_count  	as readCount,
+            A.board_review_count	as reviewCount,
+            A.board_create_date	    as createDate,
+            B.user_email            as email
+            from
+            spring_boot_boards A, spring_boot_users B
+            where
+            A.user_no = B.user_no
+            )
+        where
+            row_number between #{begin} and #{end}
+    </select>
+
+    <select id="getTotalRows" parameterType="map" resultType="int">
+        select count(*)
+        from spring_boot_boards
+    </select>
+
+
 </mapper>
