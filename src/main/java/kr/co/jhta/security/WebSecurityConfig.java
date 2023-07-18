@@ -26,7 +26,7 @@ public class WebSecurityConfig {
 					.failureUrl("/user/login?error=fail")
 				.and()
 					.logout()
-						.logoutSuccessUrl("/user/logout")
+						.logoutUrl("/user/logout")
 						.logoutSuccessUrl("/")
 						.invalidateHttpSession(true)
 				.and()
